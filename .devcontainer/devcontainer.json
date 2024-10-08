@@ -1,0 +1,37 @@
+{
+	"name": "pdf_to_data",
+	// dockerComposeを使う例
+	// "dockerComposeFile": "docker-compose.yml",
+	// "service": "app",
+	// "workspaceFolder": "/app",
+	"build": {
+		"dockerfile": "Dockerfile" // 相対パス表記
+	},
+	// VScodeの設定
+	"customizations": {
+		"vscode": {
+			// 拡張機能のインストール
+			"extensions": [
+				"usernamehw.errorlens",
+				"ms-python.python",
+				"charliermarsh.ruff",
+				"ms-python.mypy-type-checker",
+				"ms-toolsai.jupyter"
+			],
+			// setting.jsonの設定
+			"settings": {
+				"notebook.formatOnSave.enabled": true,
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.codeActionsOnSave": {
+						"source.fixAll": "explicit",
+						"source.organizeImports": "explicit"
+					},
+					"notebook.codeActionsOnSave": {
+						"notebook.source.fixAll": "explicit"
+					}
+				}
+			}
+		}
+	}
+}
